@@ -1,3 +1,5 @@
+//Yashrif Hasib Period 8 & 9
+
 public class VideoGame {
     //instance variables
     //All the variables are columns in the Assets/vgsales.csv file.
@@ -7,13 +9,13 @@ public class VideoGame {
     String year;
     String genre;
     String publisher;
-    String NASales;
-    String EUSales;
-    String JPSales;
-    String OtherSales;
-    String GlobalSales;
+    String NASales; //in millions
+    String EUSales; //in millions
+    String JPSales; //in millions
+    String OtherSales; //in millions
+    String GlobalSales; //in millions (addition of all the other sales).
 
-    //constructors
+    //constructor
     public VideoGame(String rank, String name, String platform, String year,
                      String genre, String publisher, String NASales, String EUSales,
                      String JPSales, String OtherSales, String GlobalSales) {
@@ -56,17 +58,12 @@ public class VideoGame {
     public String getOtherSales() { return this.OtherSales; }
     public String getGlobalSales() { return this.GlobalSales; }
 
-
-    /**
-     * The method that returns the Video Game Data
-     * @return The string that has the data instead of the memory address.
-     */
+    //toString method to Console print.
     public String toString() {
         String output = "";
         output += rank + ", " + name + ", " + platform + ", " + year + ", " + genre +
                 ", " + publisher + ", " + NASales + ", " + EUSales + ", " + JPSales +
                 ", " + OtherSales + ", " + GlobalSales + "\n";
-
         return output;
     }
 }

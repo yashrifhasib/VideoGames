@@ -1,3 +1,5 @@
+//Yashrif Hasib Period 8 & 9
+
 import java.io.File;
 import java.util.Scanner;
 
@@ -13,8 +15,7 @@ public class VideoGameDataReader {
             Scanner input = new Scanner(inputFile);
 
             int lineCount = 0;
-            while (input.hasNextLine())
-            {
+            while (input.hasNextLine()) {
                 input.nextLine();
                 lineCount++;
             }
@@ -51,7 +52,13 @@ public class VideoGameDataReader {
                 lineCount++;
             } //end while hasNext
             input.close();
-            System.out.println(database);
+
+            //System.out.println(database);
+            //System.out.println(database.getPlatform("NES"));
+            //System.out.println(database.getYear("2010"));
+            //System.out.println(database.getGenre("Puzzle"));
+            //System.out.println(database.getPublisher("Konami Digital Entertainment"));
+            System.out.println(database.sortByName());
         }
     }
 }
