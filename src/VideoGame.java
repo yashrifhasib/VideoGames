@@ -17,8 +17,8 @@ public class VideoGame {
 
     //constructor
     public VideoGame(String rank, String name, String platform, String year,
-                     String genre, String publisher, String NASales, String EUSales,
-                     String JPSales, String OtherSales, String GlobalSales) {
+                     String genre, String publisher, double NASales, double EUSales,
+                     double JPSales, double OtherSales, double GlobalSales) {
         this.rank = rank;
         this.name = name;
         this.platform = platform;
@@ -39,11 +39,11 @@ public class VideoGame {
     public void setYear(String year) { this.year = year; }
     public void setGenre(String genre) { this.genre = genre; }
     public void setPublisher(String publisher) { this.publisher = publisher; }
-    public void setNASales(String NASales) { this.NASales = NASales; }
-    public void setEUSales(String EUSales) { this.EUSales = EUSales; }
-    public void setJPSales(String JPSales) { this.JPSales = JPSales; }
-    public void setOtherSales(String OtherSales) { this.OtherSales = OtherSales; }
-    public void setGlobalSales(String GlobalSales) { this.GlobalSales = GlobalSales; }
+    public void setNASales(double NASales) { this.NASales = NASales; }
+    public void setEUSales(double EUSales) { this.EUSales = EUSales; }
+    public void setJPSales(double JPSales) { this.JPSales = JPSales; }
+    public void setOtherSales(double OtherSales) { this.OtherSales = OtherSales; }
+    public void setGlobalSales(double GlobalSales) { this.GlobalSales = GlobalSales; }
 
     //accessors that return values of instance variables
     public String getRank() { return this.rank; }
@@ -52,11 +52,11 @@ public class VideoGame {
     public String getYear() { return this.year; }
     public String getGenre() { return this.genre; }
     public String getPublisher() { return this.publisher; }
-    public String getNASales() { return this.NASales; }
-    public String getEUSales() {return this.EUSales; }
-    public String getJPSales() { return this.JPSales; }
-    public String getOtherSales() { return this.OtherSales; }
-    public String getGlobalSales() { return this.GlobalSales; }
+    public double getNASales() { return this.NASales; }
+    public double getEUSales() {return this.EUSales; }
+    public double getJPSales() { return this.JPSales; }
+    public double getOtherSales() { return this.OtherSales; }
+    public double getGlobalSales() { return this.GlobalSales; }
 
     //toString method to Console print.
     public String toString() {
