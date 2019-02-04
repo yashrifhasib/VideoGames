@@ -5,16 +5,16 @@ import java.util.List;
 
 public class VideoGameDatabase {
     //instance variables
-    VideoGame[] database;
+    ArrayList<VideoGame> database;
 
     //constructors
-    public VideoGameDatabase(int numberOfVideoGames) {
-        this.database = new VideoGame[numberOfVideoGames];
+    public VideoGameDatabase() {
+        this.database = new ArrayList<>();
     }
 
     //mutators
-    public void setGame(int index, VideoGame game) {
-        database[index] = game;
+    public void setGame(VideoGame game) {
+        database.add(game);
     }
 
     /**
@@ -28,9 +28,9 @@ public class VideoGameDatabase {
             if (game.getPlatform().equals(platform))
                 games.add(game);
         }
-        VideoGameDatabase output = new VideoGameDatabase(games.size());
+        VideoGameDatabase output = new VideoGameDatabase();
         for (int i = 0; i < games.size(); i++) {
-            output.setGame(i, games.get(i));
+            output.setGame(games.get(i));
         }
         return output;
     }
@@ -40,16 +40,15 @@ public class VideoGameDatabase {
      * @param year The given year (user has to give)
      * @return The video games of the given year only
      */
-    public VideoGameDatabase getYear(String year) {
+    public VideoGameDatabase getYear(int year) {
         List<VideoGame> games = new ArrayList<VideoGame>();
         for (VideoGame game : database) {
             if (game.getYear() == year)
                 games.add(game);
         }
-        VideoGameDatabase output = new VideoGameDatabase(games.size());
-        for (int i = 0; i < games.size(); i++) {
-            output.setGame(i, games.get(i));
-        }
+        VideoGameDatabase output = new VideoGameDatabase();
+        for (int i = 0; i < games.size(); i++)
+            output.setGame(games.get(i));
         return output;
     }
 
@@ -64,10 +63,9 @@ public class VideoGameDatabase {
             if (game.getGenre().equals(genre))
                 games.add(game);
         }
-        VideoGameDatabase output = new VideoGameDatabase(games.size());
-        for (int i = 0; i < games.size(); i++) {
-            output.setGame(i, games.get(i));
-        }
+        VideoGameDatabase output = new VideoGameDatabase();
+        for (int i = 0; i < games.size(); i++)
+            output.setGame(games.get(i));
         return output;
     }
 
@@ -82,49 +80,60 @@ public class VideoGameDatabase {
             if (game.getPublisher().equals(publisher))
                 games.add(game);
         }
-        VideoGameDatabase output = new VideoGameDatabase(games.size());
-        for (int i = 0; i < games.size(); i++) {
-            output.setGame(i, games.get(i));
-        }
+        VideoGameDatabase output = new VideoGameDatabase();
+        for (int i = 0; i < games.size(); i++)
+            output.setGame(games.get(i));
         return output;
     }
 
+    /**
+     * A method that sorts by the name of the game
+     * @return A VideoGameDatabase all sorted out.
+     */
     public VideoGameDatabase sortByName() {
-        for (int i = 0; i < this.database.length - 1; i++) {
+        for (int i = 0; i < this.database.size() - 1; i++) {
             int lowPosition = i;
-            for (int j = i + 1; j < this.database.length; j++) {
-                if (database[j].getName().compareTo(database[i].getName()) < 0)
+            for (int j = i + 1; j < this.database.size(); j++) {
+                if (database.get(j).getName().compareTo(database.get(i).getName()) < 0)
                     lowPosition = j;
             }
             swap(lowPosition, i, database);
         }
-        VideoGameDatabase output = new VideoGameDatabase(database.length);
-        for (int i = 0; i < database.length; i++) {
-            output.setGame(i, database[i]);
-        }
-        return output;
-    }
-    
-    public VideoGameDatabase sortByYear() {
-        for (int i = 0; i < this.database.length - 1; i++) {
-            int lowPosition = i;
-            for (int j = i + 1; j < this.database.length; j++) {
-                if (database[j].getYear() < database[i].getYear())
-                    lowPosition = j;
-            }
-            swap(lowPosition, i, database);
-        }
-        VideoGameDatabase output = new VideoGameDatabase(database.length);
-        for (int i = 0; i < database.length; i++) {
-            output.setGame(i, database[i]);
-        }
+        VideoGameDatabase output = new VideoGameDatabase();
+        for (int i = 0; i < database.size(); i++)
+            output.setGame(database.get(i));
         return output;
     }
 
-    private void swap(int firstIndex, int secondIndex, VideoGame[] database) {
-        VideoGame temp = database[firstIndex];
-        database[firstIndex] = database[secondIndex];
-        database[secondIndex] = temp;
+    /**
+     * A method that sorts by the year of release of the game
+     * @return A VideoGameDatabase Object all sorted according to year.
+     */
+    public VideoGameDatabase sortByYear() {
+        for (int i = 0; i < this.database.size() - 1; i++) {
+            int lowPosition = i;
+            for (int j = i + 1; j < this.database.size(); j++) {
+                if (database.get(j).getYear() < database.get(i).getYear())
+                    lowPosition = j;
+            }
+            swap(lowPosition, i, database);
+        }
+        VideoGameDatabase output = new VideoGameDatabase();
+        for (int i = 0; i < database.size(); i++)
+            output.setGame(database.get(i));
+        return output;
+    }
+
+    /**
+     * A helper method to swap 2 elements in an ArrayList.
+     * @param firstIndex The first element
+     * @param secondIndex The second element
+     * @param database The ArrayList to be changed
+     */
+    private void swap(int firstIndex, int secondIndex, ArrayList<VideoGame> database) {
+        VideoGame temp = database.get(firstIndex);
+        database.set(firstIndex, database.get(secondIndex));
+        database.set(secondIndex, temp);
     }
 
     //toString Method to console print Video Games
