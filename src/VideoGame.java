@@ -16,7 +16,7 @@ public class VideoGame {
     double GlobalSales; //in millions (addition of all the other sales).
 
     //constructor
-    public VideoGame(String rank, String name, String platform, String year,
+    public VideoGame(int rank, String name, String platform, int year,
                      String genre, String publisher, double NASales, double EUSales,
                      double JPSales, double OtherSales, double GlobalSales) {
         this.rank = rank;
@@ -46,10 +46,10 @@ public class VideoGame {
     public void setGlobalSales(double GlobalSales) { this.GlobalSales = GlobalSales; }
 
     //accessors that return values of instance variables
-    public String getRank() { return this.rank; }
+    public int getRank() { return this.rank; }
     public String getName() { return this.name; }
     public String getPlatform() { return this.platform; }
-    public String getYear() { return this.year; }
+    public int getYear() { return this.year; }
     public String getGenre() { return this.genre; }
     public String getPublisher() { return this.publisher; }
     public double getNASales() { return this.NASales; }
