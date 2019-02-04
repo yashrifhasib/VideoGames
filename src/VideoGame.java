@@ -33,10 +33,10 @@ public class VideoGame {
     }
 
     //mutators
-    public void setRank(String rank) { this.rank = rank; }
+    public void setRank(int rank) { this.rank = rank; }
     public void setName(String name) { this.name = name; }
     public void setPlatform(String platform) { this.platform = platform; }
-    public void setYear(String year) { this.year = year; }
+    public void setYear(int year) { this.year = year; }
     public void setGenre(String genre) { this.genre = genre; }
     public void setPublisher(String publisher) { this.publisher = publisher; }
     public void setNASales(double NASales) { this.NASales = NASales; }
