@@ -34,17 +34,17 @@ public class VideoGameDataReader {
             while (input.hasNextLine()) {
                 currentLine = input.nextLine();
                 elementData = currentLine.split(",");
-                rank = elementData[0];
+                rank = Integer.parseInt(elementData[0]);
                 name = elementData[1];
                 platform = elementData[2];
-                year = elementData[3];
+                year = Integer.parseInt(elementData[3]);
                 genre = elementData[4];
                 publisher = elementData[5];
-                NASales = elementData[6];
-                EUSales = elementData[7];
-                JPSales = elementData[8];
-                OtherSales = elementData[9];
-                GlobalSales = elementData[10];
+                NASales = Double.parseDouble(elementData[6]);
+                EUSales = Double.parseDouble(elementData[7]);
+                JPSales = Double.parseDouble(elementData[8]);
+                OtherSales = Double.parseDouble(elementData[9]);
+                GlobalSales = Double.parseDouble(elementData[10]);
 
                 game = new VideoGame(rank, name, platform, year, genre, publisher, NASales, EUSales, JPSales, OtherSales, GlobalSales);
 
