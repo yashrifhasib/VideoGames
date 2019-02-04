@@ -93,7 +93,7 @@ public class VideoGameDatabase {
         for (int i = 0; i < this.database.length - 1; i++) {
             int lowPosition = i;
             for (int j = i + 1; j < this.database.length; j++) {
-                if (database[j].getName().split("")[0].compareTo(database[i].getName().split("")[0]) < 0)
+                if (database[j].getName().compareTo(database[i].getName()) < 0)
                     lowPosition = j;
             }
             swap(lowPosition, i, database);
