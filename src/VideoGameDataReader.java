@@ -19,7 +19,7 @@ public class VideoGameDataReader {
                 input.nextLine();
                 lineCount++;
             }
-            VideoGameDatabase database = new VideoGameDatabase(lineCount);
+            VideoGameDatabase database = new VideoGameDatabase();
 
             input.close();
             input = new Scanner(inputFile);
@@ -28,7 +28,9 @@ public class VideoGameDataReader {
             String[] elementData;
             VideoGame game;
 
-            String rank, year, genre, publisher, name, platform, JPSales, OtherSales, GlobalSales, NASales, EUSales;
+            int rank, year;
+            String genre, publisher, name, platform;
+            double JPSales, OtherSales, GlobalSales, NASales, EUSales;
 
             lineCount = 0;
             while (input.hasNextLine()) {
@@ -48,17 +50,18 @@ public class VideoGameDataReader {
 
                 game = new VideoGame(rank, name, platform, year, genre, publisher, NASales, EUSales, JPSales, OtherSales, GlobalSales);
 
-                database.setGame(lineCount, game);
+                database.setGame(game);
                 lineCount++;
             } //end while hasNext
             input.close();
 
             //System.out.println(database);
             //System.out.println(database.getPlatform("NES"));
-            //System.out.println(database.getYear("2010"));
+            //System.out.println(database.getYear(2010));
             //System.out.println(database.getGenre("Puzzle"));
             //System.out.println(database.getPublisher("Konami Digital Entertainment"));
-            System.out.println(database.sortByName());
+            //System.out.println(database.sortByName());
+            //System.out.println(database.sortByYear());
         }
     }
 }
