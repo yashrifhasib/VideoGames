@@ -3,17 +3,17 @@
 public class VideoGame {
     //instance variables
     //All the variables are columns in the Assets/vgsales.csv file.
-    String rank;
+    int rank;
     String name;
     String platform;
-    String year;
+    int year;
     String genre;
     String publisher;
-    String NASales; //in millions
-    String EUSales; //in millions
-    String JPSales; //in millions
-    String OtherSales; //in millions
-    String GlobalSales; //in millions (addition of all the other sales).
+    double NASales; //in millions
+    double EUSales; //in millions
+    double JPSales; //in millions
+    double OtherSales; //in millions
+    double GlobalSales; //in millions (addition of all the other sales).
 
     //constructor
     public VideoGame(String rank, String name, String platform, String year,
