@@ -43,7 +43,7 @@ public class VideoGameDatabase {
     public VideoGameDatabase getYear(String year) {
         List<VideoGame> games = new ArrayList<VideoGame>();
         for (VideoGame game : database) {
-            if (game.getYear().equals(year))
+            if (game.getYear() == year)
                 games.add(game);
         }
         VideoGameDatabase output = new VideoGameDatabase(games.size());
@@ -94,6 +94,22 @@ public class VideoGameDatabase {
             int lowPosition = i;
             for (int j = i + 1; j < this.database.length; j++) {
                 if (database[j].getName().compareTo(database[i].getName()) < 0)
+                    lowPosition = j;
+            }
+            swap(lowPosition, i, database);
+        }
+        VideoGameDatabase output = new VideoGameDatabase(database.length);
+        for (int i = 0; i < database.length; i++) {
+            output.setGame(i, database[i]);
+        }
+        return output;
+    }
+    
+    public VideoGameDatabase sortByYear() {
+        for (int i = 0; i < this.database.length - 1; i++) {
+            int lowPosition = i;
+            for (int j = i + 1; j < this.database.length; j++) {
+                if (database[j].getYear() < database[i].getYear())
                     lowPosition = j;
             }
             swap(lowPosition, i, database);
