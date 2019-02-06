@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class VideoGameDataReader {
     //Constants
-    private static final String FILENAME = "C:\\Users\\Yashrif\\IdeaProjects\\VideoGames\\src\\Assets\\vgsales.csv";
+    private static final String FILENAME = "C:\\Users\\Student 8\\IdeaProjects\\VideoGames\\src\\vgsales.csv";
 
     public static void main(String[] args) throws Exception {
         File inputFile = new File(FILENAME);
@@ -31,7 +31,7 @@ public class VideoGameDataReader {
             int rank, year;
             String genre, publisher, name, platform;
             double JPSales, OtherSales, GlobalSales, NASales, EUSales;
-            
+
             input.nextLine();
             lineCount = 0;
             while (input.hasNextLine()) {
@@ -57,10 +57,11 @@ public class VideoGameDataReader {
             input.close();
 
             //System.out.println(database);
+            //System.out.println(database.getGame(10));
             //System.out.println(database.getPlatform("NES"));
             //System.out.println(database.getYear(2010));
             //System.out.println(database.getGenre("Puzzle"));
-            //System.out.println(database.getPublisher("Konami Digital Entertainment"));
+            //System.out.println(database.getPublisher("Nintendo"));
             //System.out.println(database.sortByName());
             //System.out.println(database.sortByYear());
         }
