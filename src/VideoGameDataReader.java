@@ -31,7 +31,8 @@ public class VideoGameDataReader {
             int rank, year;
             String genre, publisher, name, platform;
             double JPSales, OtherSales, GlobalSales, NASales, EUSales;
-
+            
+            input.nextLine();
             lineCount = 0;
             while (input.hasNextLine()) {
                 currentLine = input.nextLine();
