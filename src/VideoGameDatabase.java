@@ -18,21 +18,29 @@ public class VideoGameDatabase {
     }
 
     /**
+     * Return the video game of the given rank
+     * @param rank the given rank
+     * @return the video game
+     */
+    public VideoGame getGame(int rank) {
+        for (VideoGame game : database)
+            if (game.getRank() == rank)
+                return game;
+        return null;
+    }
+
+    /**
      * A method to filter out the given platform games.
      * @param platform The given platform (user has to give)
      * @return A video game database with all the games of the given platform
      */
     public VideoGameDatabase getPlatform(String platform) {
-        List<VideoGame> games = new ArrayList<VideoGame>();
+        VideoGameDatabase games = new VideoGameDatabase();
         for (VideoGame game : database) {
             if (game.getPlatform().equals(platform))
-                games.add(game);
+                games.setGame(game);
         }
-        VideoGameDatabase output = new VideoGameDatabase();
-        for (int i = 0; i < games.size(); i++) {
-            output.setGame(games.get(i));
-        }
-        return output;
+        return games;
     }
 
     /**
@@ -41,15 +49,12 @@ public class VideoGameDatabase {
      * @return The video games of the given year only
      */
     public VideoGameDatabase getYear(int year) {
-        List<VideoGame> games = new ArrayList<VideoGame>();
+        VideoGameDatabase games = new VideoGameDatabase();
         for (VideoGame game : database) {
             if (game.getYear() == year)
-                games.add(game);
+                games.setGame(game);
         }
-        VideoGameDatabase output = new VideoGameDatabase();
-        for (int i = 0; i < games.size(); i++)
-            output.setGame(games.get(i));
-        return output;
+        return games;
     }
 
     /**
@@ -58,15 +63,12 @@ public class VideoGameDatabase {
      * @return The video games of the given genre only
      */
     public VideoGameDatabase getGenre(String genre) {
-        List<VideoGame> games = new ArrayList<VideoGame>();
+        VideoGameDatabase games = new VideoGameDatabase();
         for (VideoGame game : database) {
             if (game.getGenre().equals(genre))
-                games.add(game);
+                games.setGame(game);
         }
-        VideoGameDatabase output = new VideoGameDatabase();
-        for (int i = 0; i < games.size(); i++)
-            output.setGame(games.get(i));
-        return output;
+        return games;
     }
 
     /**
@@ -75,15 +77,12 @@ public class VideoGameDatabase {
      * @return The video games of the given publisher only
      */
     public VideoGameDatabase getPublisher(String publisher) {
-        List<VideoGame> games = new ArrayList<VideoGame>();
+        VideoGameDatabase games = new VideoGameDatabase();
         for (VideoGame game : database) {
             if (game.getPublisher().equals(publisher))
-                games.add(game);
+                games.setGame(game);
         }
-        VideoGameDatabase output = new VideoGameDatabase();
-        for (int i = 0; i < games.size(); i++)
-            output.setGame(games.get(i));
-        return output;
+        return games;
     }
 
     /**
@@ -99,10 +98,8 @@ public class VideoGameDatabase {
             }
             swap(lowPosition, i, database);
         }
-        VideoGameDatabase output = new VideoGameDatabase();
-        for (int i = 0; i < database.size(); i++)
-            output.setGame(database.get(i));
-        return output;
+
+        return adder(database);
     }
 
     /**
@@ -118,9 +115,17 @@ public class VideoGameDatabase {
             }
             swap(lowPosition, i, database);
         }
-        VideoGameDatabase output = new VideoGameDatabase();
-        for (int i = 0; i < database.size(); i++)
-            output.setGame(database.get(i));
+        return adder(database);
+    }
+
+    /**
+     * A toString() method
+     * @return A string to represent the object
+     */
+    public String toString() {
+        String output = "";
+        for (VideoGame game : database)
+            output += game;
         return output;
     }
 
@@ -136,11 +141,15 @@ public class VideoGameDatabase {
         database.set(secondIndex, temp);
     }
 
-    //toString Method to console print Video Games
-    public String toString() {
-        String output = "";
-        for (VideoGame game : database)
-            output += game;
+    /**
+     * A method that will convert an arraylist into a VideoGameDatabase
+     * @param database the arraylist
+     * @return the VideoGameDatabase
+     */
+    private VideoGameDatabase adder(ArrayList<VideoGame> database) {
+        VideoGameDatabase output = new VideoGameDatabase();
+        for (int i = 0; i < database.size(); i++)
+            output.setGame(database.get(i));
         return output;
     }
 }
