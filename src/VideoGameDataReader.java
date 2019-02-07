@@ -64,6 +64,18 @@ public class VideoGameDataReader {
             //System.out.println(database.getPublisher("Nintendo"));
             //System.out.println(database.sortByName());
             //System.out.println(database.sortByYear());
+            //System.out.println(database.getTotal_NA_Sales());
+            //System.out.println(database.getTotal_NA_Sales("NES"));
+            //System.out.println(database.getAverage_NA_Sales());
+            //System.out.println(database.getAverage_NA_Sales("NES"));
+            //System.out.println(database.getTotal_EU_Sales());
+            //System.out.println(database.getTotal_EU_Sales("NES"));
+            //System.out.println(database.getAverage_EU_Sales());
+            //System.out.println(database.getAverage_EU_Sales("NES"));
+            //System.out.println(database.getTotal_Global_Sales());
+            //System.out.println(database.getTotal_Global_Sales("NES"));
+            //System.out.println(database.getAverage_Global_Sales());
+            //System.out.println(database.getAverage_Global_Sales("NES"));
         }
     }
 }
