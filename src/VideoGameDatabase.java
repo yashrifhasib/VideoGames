@@ -119,6 +119,168 @@ public class VideoGameDatabase {
     }
 
     /**
+     * Total North America Sales of all games
+     * @return The Total
+     */
+    public double getTotal_NA_Sales() {
+        double sum = 0;
+        for (VideoGame game : database)
+            sum += game.getNASales();
+        return sum;
+    }
+
+    /**
+     * Average North America Sales
+     * @return The Average
+     */
+    public double getAverage_NA_Sales() {
+        double sum = 0;
+        int count = 0;
+        for (VideoGame game : database) {
+            sum += game.getNASales();
+            count++;
+        }
+        return sum / count;
+    }
+
+    /**
+     * Total North America Sales of the given Platform
+     * @param platform the given platform
+     * @return the sales
+     */
+    public double getTotal_NA_Sales(String platform) {
+        double sum = 0;
+        for (VideoGame game : database)
+            if (game.getPlatform().equals(platform))
+                sum += game.getNASales();
+        return sum;
+    }
+
+    /**
+     * Average North America Sales of the given platform
+     * @param platform the given platform
+     * @return the average sales
+     */
+    public double getAverage_NA_Sales(String platform) {
+        double sum = 0;
+        int count = 0;
+        for (VideoGame game : database) {
+            if (game.getPlatform().equals(platform))
+                sum += game.getNASales();
+            count++;
+        }
+        return sum / count;
+    }
+
+    /**
+     * Total Europe Sales of all games
+     * @return The Total
+     */
+    public double getTotal_EU_Sales() {
+        double sum = 0;
+        for (VideoGame game : database)
+            sum += game.getEUSales();
+        return sum;
+    }
+
+    /**
+     * Average Europe Sales
+     * @return The Average
+     */
+    public double getAverage_EU_Sales() {
+        double sum = 0;
+        int count = 0;
+        for (VideoGame game : database) {
+            sum += game.getEUSales();
+            count++;
+        }
+        return sum / count;
+    }
+
+    /**
+     * Total Europe Sales of the given Platform
+     * @param platform the given platform
+     * @return the sales
+     */
+    public double getTotal_EU_Sales(String platform) {
+        double sum = 0;
+        for (VideoGame game : database)
+            if (game.getPlatform().equals(platform))
+                sum += game.getEUSales();
+        return sum;
+    }
+
+    /**
+     * Average Europe Sales of the given platform
+     * @param platform the given platform
+     * @return the average sales
+     */
+    public double getAverage_EU_Sales(String platform) {
+        double sum = 0;
+        int count = 0;
+        for (VideoGame game : database) {
+            if (game.getPlatform().equals(platform))
+                sum += game.getEUSales();
+            count++;
+        }
+        return sum / count;
+    }
+
+    /**
+     * Total Global Sales of all games
+     * @return The Total
+     */
+    public double getTotal_Global_Sales() {
+        double sum = 0;
+        for (VideoGame game : database)
+            sum += game.getGlobalSales();
+        return sum;
+    }
+
+    /**
+     * Average Global Sales
+     * @return The Average
+     */
+    public double getAverage_Global_Sales() {
+        double sum = 0;
+        int count = 0;
+        for (VideoGame game : database) {
+            sum += game.getGlobalSales();
+            count++;
+        }
+        return sum / count;
+    }
+
+    /**
+     * Total Global Sales of the given Platform
+     * @param platform the given platform
+     * @return the sales
+     */
+    public double getTotal_Global_Sales(String platform) {
+        double sum = 0;
+        for (VideoGame game : database)
+            if (game.getPlatform().equals(platform))
+                sum += game.getGlobalSales();
+        return sum;
+    }
+
+    /**
+     * Average Global Sales of the given platform
+     * @param platform the given platform
+     * @return the average sales
+     */
+    public double getAverage_Global_Sales(String platform) {
+        double sum = 0;
+        int count = 0;
+        for (VideoGame game : database) {
+            if (game.getPlatform().equals(platform))
+                sum += game.getGlobalSales();
+            count++;
+        }
+        return sum / count;
+    }
+
+    /**
      * A toString() method
      * @return A string to represent the object
      */
@@ -128,6 +290,7 @@ public class VideoGameDatabase {
             output += game;
         return output;
     }
+
 
     /**
      * A helper method to swap 2 elements in an ArrayList.
