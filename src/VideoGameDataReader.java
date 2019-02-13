@@ -56,28 +56,28 @@ public class VideoGameDataReader {
             } //end while hasNext
             input.close();
 
-            //System.out.println(database);
-            //System.out.println(database.getGame(10));
-            //System.out.println(database.getPlatform("NES"));
-            //System.out.println(database.getYear(2010));
-            //System.out.println(database.getGenre("Puzzle"));
-            //System.out.println(database.getPublisher("Nintendo"));
+            //System.out.println("Whole VideoGame List: \n" + database);
+            //System.out.println("Game 10 \n" + database.getGame(10));
+            //System.out.println("Game of platform NES: \n" + database.getPlatform("NES"));
+            //System.out.println("Game of Year 2010: \n" + database.getYear(2010));
+            //System.out.println("Game of Genre Puzzle: \n" + database.getGenre("Puzzle"));
+            //System.out.println("Game of Publisher Nintendo: \n" + database.getPublisher("Nintendo"));
             //database.sortByName();
-            //System.out.println(database);
+            //System.out.println("Sorted by Name: \n" + database);
             //database.sortByYear();
-            //System.out.println(database);
-            //System.out.println(database.getTotal_NA_Sales());
-            //System.out.println(database.getTotal_NA_Sales("NES"));
-            //System.out.println(database.getAverage_NA_Sales());
-            //System.out.println(database.getAverage_NA_Sales("NES"));
-            //System.out.println(database.getTotal_EU_Sales());
-            //System.out.println(database.getTotal_EU_Sales("NES"));
-            //System.out.println(database.getAverage_EU_Sales());
-            //System.out.println(database.getAverage_EU_Sales("NES"));
-            //System.out.println(database.getTotal_Global_Sales());
-            //System.out.println(database.getTotal_Global_Sales("NES"));
-            //System.out.println(database.getAverage_Global_Sales());
-            //System.out.println(database.getAverage_Global_Sales("NES"));
+            //System.out.println("Sorted by year: \n" + database);
+            //System.out.println("Total North America Sales \n" + database.getTotal_NA_Sales());
+            //System.out.println("Total North America Sales of NES \n" + database.getTotal_NA_Sales("NES"));
+            //System.out.println("Average North America Sales \n" + database.getAverage_NA_Sales());
+            //System.out.println("Average North America Sales of NES \n" + database.getAverage_NA_Sales("NES"));
+            //System.out.println("Total European Sales \n" + database.getTotal_EU_Sales());
+            //System.out.println("Total European Sales of NES \n" + database.getTotal_EU_Sales("NES"));
+            //System.out.println("Average European Sales \n" + database.getAverage_EU_Sales());
+            //System.out.println("Average European Sales of NES \n" + database.getAverage_EU_Sales("NES"));
+            //System.out.println("Total Global Sales \n" + database.getTotal_Global_Sales());
+            //System.out.println("Total Global Sales of NES \n" + database.getTotal_Global_Sales("NES"));
+            //System.out.println("Average Global Sales \n" + database.getAverage_Global_Sales());
+            //System.out.println("Average Global Sales of NES\n" + database.getAverage_Global_Sales("NES"));
         }
     }
 }
