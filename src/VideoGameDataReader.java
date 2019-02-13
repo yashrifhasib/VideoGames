@@ -62,8 +62,10 @@ public class VideoGameDataReader {
             //System.out.println(database.getYear(2010));
             //System.out.println(database.getGenre("Puzzle"));
             //System.out.println(database.getPublisher("Nintendo"));
-            //System.out.println(database.sortByName());
-            //System.out.println(database.sortByYear());
+            //database.sortByName();
+            //System.out.println(database);
+            //database.sortByYear();
+            //System.out.println(database);
             //System.out.println(database.getTotal_NA_Sales());
             //System.out.println(database.getTotal_NA_Sales("NES"));
             //System.out.println(database.getAverage_NA_Sales());
