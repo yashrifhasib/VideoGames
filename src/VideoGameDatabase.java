@@ -89,7 +89,7 @@ public class VideoGameDatabase {
      * A method that sorts by the name of the game
      * @return A VideoGameDatabase all sorted out.
      */
-    public VideoGameDatabase sortByName() {
+    public void sortByName() {
         for (int i = 0; i < this.database.size() - 1; i++) {
             int lowPosition = i;
             for (int j = i + 1; j < this.database.size(); j++) {
@@ -106,7 +106,7 @@ public class VideoGameDatabase {
      * A method that sorts by the year of release of the game
      * @return A VideoGameDatabase Object all sorted according to year.
      */
-    public VideoGameDatabase sortByYear() {
+    public void sortByYear() {
         for (int i = 0; i < this.database.size() - 1; i++) {
             int lowPosition = i;
             for (int j = i + 1; j < this.database.size(); j++) {
